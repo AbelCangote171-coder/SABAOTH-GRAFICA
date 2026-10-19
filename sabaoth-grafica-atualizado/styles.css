@@ -200,3 +200,355 @@ button { font: inherit; }
 .design-card span { display: block; padding: 13px 15px 15px; font-size: .88rem; font-weight: 700; }
 @media (max-width: 760px) { .hero-image { inset: 0; background-position: 58% center; } .hero-shade { background: radial-gradient(ellipse at 50% 42%, rgba(255,196,0,.10), transparent 48%), linear-gradient(90deg, rgba(6,23,44,.96), rgba(6,23,44,.78)), linear-gradient(0deg, rgba(6,23,44,.3), transparent); } .design-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; } .design-card img { height: 170px; } .design-showcase { margin-top: 52px; padding-top: 38px; } }
 @media (max-width: 430px) { .design-grid { grid-template-columns: 1fr; } .design-card img { height: 210px; } }
+
+/* HERO — imagem de fundo */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 15, 40, 0.94) 0%,
+            rgba(5, 15, 40, 0.75) 50%,
+            rgba(5, 15, 40, 0.35) 100%
+        ),
+        url("assets/images/hero-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Efeito de luz */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 10%;
+    right: 5%;
+    background: rgba(255, 193, 7, 0.18);
+    filter: blur(100px);
+    border-radius: 50%;
+    animation: heroGlow 5s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+/* Conteúdo acima dos efeitos */
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes heroGlow {
+    from {
+        transform: scale(0.8);
+        opacity: 0.4;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 0.9;
+    }
+}
+
+/* 1. ANIMAÇÕES PRINCIPAIS */
+
+@keyframes sabaothFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sabaothFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes sabaothGlow {
+    0%, 100% {
+        opacity: 0.45;
+        transform: scale(0.92);
+    }
+
+    50% {
+        opacity: 0.85;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes sabaothFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes sabaothShine {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes sabaothPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 196, 0, 0.25);
+    }
+
+    50% {
+        box-shadow: 0 0 0 9px rgba(255, 196, 0, 0);
+    }
+}
+
+
+/* HERO — ENTRADA DO CONTEÚDO*/
+.hero h1,
+.hero-content h1 {
+    animation: sabaothFadeUp 0.9s ease-out both;
+}
+
+.hero p,
+.hero-content p {
+    animation: sabaothFadeUp 0.9s ease-out 0.15s both;
+}
+
+.hero .btn,
+.hero-content .btn,
+.hero a.btn {
+    animation: sabaothFadeUp 0.9s ease-out 0.3s both;
+}
+/* GLOW ENTRE O TEXTO E O FUNDO DA HERO*/
+.hero,
+.hero-content {
+    position: relative;
+    isolation: isolate;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+
+    width: min(650px, 90%);
+    height: 300px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 196, 0, 0.19) 0%,
+        rgba(255, 196, 0, 0.09) 35%,
+        rgba(255, 196, 0, 0.025) 60%,
+        transparent 75%
+    );
+
+    filter: blur(35px);
+    opacity: 0.8;
+
+    pointer-events: none;
+    z-index: -1;
+
+    animation: sabaothGlow 6s ease-in-out infinite;
+}
+
+
+/* Brilho adicional azul para combinar com a marca */
+
+.hero::after {
+    content: "";
+    position: absolute;
+
+    width: min(500px, 80%);
+    height: 220px;
+
+    bottom: 0;
+    right: 0;
+
+    background: radial-gradient(
+        ellipse,
+        rgba(37, 99, 235, 0.18),
+        transparent 70%
+    );
+
+    filter: blur(45px);
+    opacity: 0.65;
+
+    pointer-events: none;
+    z-index: -1;
+
+    animation: sabaothGlow 8s ease-in-out infinite reverse;
+}
+/*BOTÕES — HOVER MODERNO */
+.btn,
+button,
+a.btn {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .btn:hover,
+    a.btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+    }
+
+    .btn:active,
+    a.btn:active {
+        transform: translateY(-1px) scale(0.98);
+    }
+}
+/* CARTÕES DE SERVIÇOS */
+.service-card,
+.servico-card,
+.services .card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .service-card:hover,
+    .servico-card:hover,
+    .services .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 35px rgba(10, 25, 55, 0.12);
+        border-color: rgba(255, 196, 0, 0.65);
+    }
+}
+/* PORTFÓLIO — EFEITO NAS IMAGENS*/
+.portfolio-item,
+.gallery-item,
+.design-card {
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+.portfolio-item img,
+.gallery-item img,
+.design-card img {
+    transition:
+        transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.4s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+    .portfolio-item:hover,
+    .gallery-item:hover,
+    .design-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(10, 25, 55, 0.15);
+    }
+
+    .portfolio-item:hover img,
+    .gallery-item:hover img,
+    .design-card:hover img {
+        transform: scale(1.06);
+        filter: saturate(1.08);
+    }
+}
+/*LOGÓTIPO — MOVIMENTO SUBTIL */
+.logo img,
+.navbar-brand img,
+header .logo img {
+    transition: transform 0.35s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+    .logo img:hover,
+    .navbar-brand img:hover,
+    header .logo img:hover {
+        transform: scale(1.04);
+    }
+}
+/*LINKS DO MENU */
+nav a,
+.navbar a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after,
+.navbar a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    width: 100%;
+    height: 2px;
+
+    background: #ffc400;
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition: transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    nav a:hover::after,
+    .navbar a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+/* TÍTULOS DAS SECÇÕES*/
+section h2 {
+    text-wrap: balance;
+}
+section h2::selection,
+section p::selection {
+    background: #ffc400;
+    color: #07152e;
+}
+/* CTA — BRILHO DISCRETO*/
+.cta .btn,
+.cta-section .btn,
+.contact-section .btn {
+    animation: sabaothPulse 3s ease-in-out infinite;
+}
+/*SCROLL SUAVE */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+/* ACESSIBILIDADE*/
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
