@@ -18,7 +18,7 @@
   <header class="site-header" id="inicio">
     <div class="container nav-wrap">
       <a class="brand" href="#inicio" aria-label="SABAOTH Gráfica — Início">
-        <img src="assets/images/sabaoth-logo.svg" alt="SABAOTH Gráfica">
+        <img src="assets/icons/sabaoth-logo.svg" alt="SABAOTH Gráfica">
       </a>
       <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
         <span></span><span></span><span></span>
@@ -26,6 +26,7 @@
       <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
         <a class="nav-link active" href="#inicio">Início</a>
         <a class="nav-link" href="#servicos">Serviços</a>
+        <a class="nav-link" href="#precos">Preços</a>
         <a class="nav-link" href="#portfolio">Portfólio</a>
         <a class="nav-link" href="#sobre">Sobre nós</a>
         <a class="button button-yellow nav-cta whatsapp-link" href="#" data-message="Olá, SABAOTH Gráfica! Gostaria de obter informações sobre os vossos serviços.">Falar no WhatsApp <span aria-hidden="true">↗</span></a>
@@ -97,6 +98,36 @@
       </div>
     </section>
 
+    <section class="pricing section" id="precos">
+      <div class="container">
+        <div class="section-heading pricing-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> TABELA DE PREÇOS</p>
+            <h2>Os nossos preços, <span>com transparência.</span></h2>
+          </div>
+          <p class="section-intro">Explore os produtos e serviços da SABAOTH Gráfica. Pesquise pelo nome e encontre o preço indicado.</p>
+        </div>
+
+        <div class="pricing-toolbar">
+          <label class="pricing-search">
+            <span class="sr-only">Pesquisar produto ou serviço</span>
+            <input id="price-search" type="search" placeholder="Pesquisar produto ou serviço..." autocomplete="off">
+          </label>
+          <p class="pricing-count" id="pricing-count" aria-live="polite">14 produtos e serviços</p>
+        </div>
+
+        <div class="pricing-grid" id="pricing-grid">
+          <p class="pricing-loading">A carregar preços...</p>
+        </div>
+
+        <div class="pricing-note"><span aria-hidden="true">ⓘ</span><p>Preços indicados em kwanzas (Kz). Confirme connosco os detalhes, quantidades e opções de personalização antes de encomendar.</p></div>
+        <div class="pricing-cta">
+          <div><h3>Tem um pedido especial?</h3><p>Fale connosco para esclarecer dúvidas ou solicitar informações sobre um produto.</p></div>
+          <a class="button button-yellow whatsapp-link" href="#" data-message="Olá, SABAOTH Gráfica! Consultei a tabela de preços e gostaria de obter mais informações.">Falar no WhatsApp <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="portfolio section" id="portfolio">
       <div class="container">
         <div class="section-heading portfolio-heading">
@@ -113,11 +144,11 @@
           <button class="filter-button" type="button" data-filter="produtos" aria-pressed="false">Outros produtos</button>
         </div>
         <div class="gallery-grid">
-        <button class="gallery-card" type="button" data-category="personalizados" data-full="assets/images/portfolio/Boné.png" aria-label="Ver imagem: Boné">
+        <button class="gallery-card" type="button" data-category="personalizados" data-price="5000" data-full="assets/images/portfolio/Boné.png" aria-label="Ver imagem: Boné">
           <img src="assets/images/portfolio/Boné.png" alt="Boné personalizado pela SABAOTH Gráfica" loading="lazy">
           <span class="gallery-caption"><span>Boné</span><span class="gallery-zoom" aria-hidden="true">↗</span></span>
         </button>
-        <button class="gallery-card" type="button" data-category="personalizados" data-full="assets/images/portfolio/Bonés..png" aria-label="Ver imagem: Bonés">
+        <button class="gallery-card" type="button" data-category="personalizados" data-price="3500" data-full="assets/images/portfolio/Bonés..png" aria-label="Ver imagem: Bonés">
           <img src="assets/images/portfolio/Bonés..png" alt="Bonés personalizado pela SABAOTH Gráfica" loading="lazy">
           <span class="gallery-caption"><span>Bonés</span><span class="gallery-zoom" aria-hidden="true">↗</span></span>
         </button>
@@ -125,11 +156,11 @@
           <img src="assets/images/portfolio/Caderno e lapiseira.png" alt="Caderno e lapiseira personalizado pela SABAOTH Gráfica" loading="lazy">
           <span class="gallery-caption"><span>Caderno e lapiseira</span><span class="gallery-zoom" aria-hidden="true">↗</span></span>
         </button>
-        <button class="gallery-card" type="button" data-category="personalizados" data-full="assets/images/portfolio/Caneca.png" aria-label="Ver imagem: Caneca">
+        <button class="gallery-card" type="button" data-category="personalizados" data-price="5000" data-full="assets/images/portfolio/Caneca.png" aria-label="Ver imagem: Caneca">
           <img src="assets/images/portfolio/Caneca.png" alt="Caneca personalizado pela SABAOTH Gráfica" loading="lazy">
           <span class="gallery-caption"><span>Caneca</span><span class="gallery-zoom" aria-hidden="true">↗</span></span>
         </button>
-        <button class="gallery-card" type="button" data-category="personalizados" data-full="assets/images/portfolio/Canecas.png" aria-label="Ver imagem: Canecas">
+        <button class="gallery-card" type="button" data-category="personalizados" data-price="5000" data-full="assets/images/portfolio/Canecas.png" aria-label="Ver imagem: Canecas">
           <img src="assets/images/portfolio/Canecas.png" alt="Canecas personalizado pela SABAOTH Gráfica" loading="lazy">
           <span class="gallery-caption"><span>Canecas</span><span class="gallery-zoom" aria-hidden="true">↗</span></span>
         </button>
@@ -137,7 +168,7 @@
           <img src="assets/images/portfolio/Cartoes de visita..png" alt="Cartoes de visita personalizado pela SABAOTH Gráfica" loading="lazy">
           <span class="gallery-caption"><span>Cartoes de visita</span><span class="gallery-zoom" aria-hidden="true">↗</span></span>
         </button>
-        <button class="gallery-card" type="button" data-category="personalizados" data-full="assets/images/portfolio/Casaco.png" aria-label="Ver imagem: Casaco">
+        <button class="gallery-card" type="button" data-category="personalizados" data-price="12000" data-full="assets/images/portfolio/Casaco.png" aria-label="Ver imagem: Casaco">
           <img src="assets/images/portfolio/Casaco.png" alt="Casaco personalizado pela SABAOTH Gráfica" loading="lazy">
           <span class="gallery-caption"><span>Casaco</span><span class="gallery-zoom" aria-hidden="true">↗</span></span>
         </button>
@@ -145,11 +176,11 @@
           <img src="assets/images/portfolio/Chaveiro.png" alt="Chaveiro personalizado pela SABAOTH Gráfica" loading="lazy">
           <span class="gallery-caption"><span>Chaveiro</span><span class="gallery-zoom" aria-hidden="true">↗</span></span>
         </button>
-        <button class="gallery-card" type="button" data-category="papelaria" data-full="assets/images/portfolio/Convites.png" aria-label="Ver imagem: Convites">
+        <button class="gallery-card" type="button" data-category="papelaria" data-price="1500" data-full="assets/images/portfolio/Convites.png" aria-label="Ver imagem: Convites">
           <img src="assets/images/portfolio/Convites.png" alt="Convites personalizado pela SABAOTH Gráfica" loading="lazy">
           <span class="gallery-caption"><span>Convites</span><span class="gallery-zoom" aria-hidden="true">↗</span></span>
         </button>
-        <button class="gallery-card" type="button" data-category="produtos" data-full="assets/images/portfolio/Esferográficas.png" aria-label="Ver imagem: Esferográficas">
+        <button class="gallery-card" type="button" data-category="produtos" data-price="1500" data-full="assets/images/portfolio/Esferográficas.png" aria-label="Ver imagem: Esferográficas">
           <img src="assets/images/portfolio/Esferográficas.png" alt="Esferográficas personalizado pela SABAOTH Gráfica" loading="lazy">
           <span class="gallery-caption"><span>Esferográficas</span><span class="gallery-zoom" aria-hidden="true">↗</span></span>
         </button>
@@ -161,7 +192,7 @@
           <img src="assets/images/portfolio/Sacolas.png" alt="Sacolas personalizado pela SABAOTH Gráfica" loading="lazy">
           <span class="gallery-caption"><span>Sacolas</span><span class="gallery-zoom" aria-hidden="true">↗</span></span>
         </button>
-        <button class="gallery-card" type="button" data-category="personalizados" data-full="assets/images/portfolio/T-shirt branca.png" aria-label="Ver imagem: T-shirt branca">
+        <button class="gallery-card" type="button" data-category="personalizados" data-price="6000" data-full="assets/images/portfolio/T-shirt branca.png" aria-label="Ver imagem: T-shirt branca">
           <img src="assets/images/portfolio/T-shirt branca.png" alt="T-shirt branca personalizado pela SABAOTH Gráfica" loading="lazy">
           <span class="gallery-caption"><span>T-shirt branca</span><span class="gallery-zoom" aria-hidden="true">↗</span></span>
         </button>
@@ -176,9 +207,9 @@
             <p class="section-intro">Alguns logótipos e artes desenvolvidos pela SABAOTH Gráfica para diferentes projectos e marcas.</p>
           </div>
           <div class="design-grid">
-            <button class="design-card" type="button" data-design-image="assets/images/design-grafico/Logo-Bwe-cool.png" data-design-title="Logo Bwe Cool"><img src="assets/images/design-grafico/Logo-Bwe-cool.png" alt="Logótipo Bwe Cool desenvolvido pela SABAOTH" loading="lazy"><span>Identidade de marca</span></button>
-            <button class="design-card" type="button" data-design-image="assets/images/design-grafico/Logo-Final-Orlando.png" data-design-title="Logo Orlando"><img src="assets/images/design-grafico/Logo-Final-Orlando.png" alt="Logótipo Orlando desenvolvido pela SABAOTH" loading="lazy"><span>Identidade de marca</span></button>
-            <button class="design-card" type="button" data-design-image="assets/images/design-grafico/logo-imobiliaria.png" data-design-title="Logo imobiliária"><img src="assets/images/design-grafico/logo-imobiliaria.png" alt="Logótipo imobiliário desenvolvido pela SABAOTH" loading="lazy"><span>Identidade de marca</span></button>
+            <button class="design-card" type="button" data-design-image="assets/images/design-grafico/Logo-Bwe-cool.png" data-design-title="Logo Bwe Cool" data-price="6000"><img src="assets/images/design-grafico/Logo-Bwe-cool.png" alt="Logótipo Bwe Cool desenvolvido pela SABAOTH" loading="lazy"><span>Identidade de marca</span></button>
+            <button class="design-card" type="button" data-design-image="assets/images/design-grafico/Logo-Final-Orlando.png" data-design-title="Logo Orlando" data-price="6000"><img src="assets/images/design-grafico/Logo-Final-Orlando.png" alt="Logótipo Orlando desenvolvido pela SABAOTH" loading="lazy"><span>Identidade de marca</span></button>
+            <button class="design-card" type="button" data-design-image="assets/images/design-grafico/logo-imobiliaria.png" data-design-title="Logo imobiliária" data-price="6000"><img src="assets/images/design-grafico/logo-imobiliaria.png" alt="Logótipo imobiliário desenvolvido pela SABAOTH" loading="lazy"><span>Identidade de marca</span></button>
             <button class="design-card" type="button" data-design-image="assets/images/design-grafico/Feliz-dia-do-programador.png" data-design-title="Arte — Dia do Programador"><img src="assets/images/design-grafico/Feliz-dia-do-programador.png" alt="Arte de felicitação do Dia do Programador criada pela SABAOTH" loading="lazy"><span>Arte para comunicação</span></button>
             <button class="design-card" type="button" data-design-image="assets/images/design-grafico/Public-final.png" data-design-title="Arte gráfica"><img src="assets/images/design-grafico/Public-final.png" alt="Arte gráfica criada pela SABAOTH" loading="lazy"><span>Design para divulgação</span></button>
           </div>
@@ -212,7 +243,7 @@
 
   <footer class="site-footer">
     <div class="container footer-main">
-      <a class="footer-brand" href="#inicio" aria-label="SABAOTH Gráfica — Início"><img src="assets/images/sabaoth-logo.svg" alt="SABAOTH Gráfica"></a>
+      <a class="footer-brand" href="#inicio" aria-label="SABAOTH Gráfica — Início"><img src="assets/icons/sabaoth-logo.svg" alt="SABAOTH Gráfica"></a>
       <div class="footer-info"><span class="footer-label">CONTACTO</span><a class="whatsapp-link" href="#" data-message="Olá, SABAOTH Gráfica! Gostaria de entrar em contacto.">+244 951 940 041</a><span>Angola</span></div>
       <div class="footer-info"><span class="footer-label">HORÁRIO</span><span>Contacte-nos pelo WhatsApp</span><span>para confirmar disponibilidade.</span></div>
       <a class="footer-top" href="#inicio">Voltar ao topo ↑</a>
